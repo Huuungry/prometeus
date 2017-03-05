@@ -6,6 +6,8 @@ public class Lesson2_3 {
 		int[] array = {30, 2, 10, 4, 6};
 		int length = array.length;
 
+		
+		
 		//PUT YOUR CODE HERE
 		 for (int i = length - 1; i >= 0; i--) {
 	            for (int j = 0; j < i; j++) {
