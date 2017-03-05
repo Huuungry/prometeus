@@ -1,6 +1,6 @@
-package prometeus;
+package stage2;
 
-public class Lesson2_1 {
+public class Task1 {
 
 	public static void main(String[] args) {
 

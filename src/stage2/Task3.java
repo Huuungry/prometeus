@@ -1,6 +1,6 @@
-package prometeus;
+package stage2;
 
-public class Lesson2_3 {
+public class Task3 {
 	
 	public static void main(String[] args) {
 		int[] array = {30, 2, 10, 4, 6};
