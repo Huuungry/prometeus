@@ -1,17 +1,19 @@
 package stage3;
 
-public class Task1 {
+public class Node {
 	
-		private Task1 next;
+		private Node next;
 		private Integer data;
 		
-		public Task1() {
+		public Node() {
 		}
-
-		public Task1 getNext() {
+		
+		
+		
+		public Node getNext() {
 			return next;
 		}
-		public void setNext(Task1 next) {
+		public void setNext(Node next) {
 			this.next = next;
 		}
 		public Integer getData() {
