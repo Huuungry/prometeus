@@ -69,7 +69,7 @@ public class LinkedList {
 			ptr = ptr.getNext();
 		}
 		size--;
-		return false;
+		return true;
 
 		// PUT YOUR CODE HERE
 	}
