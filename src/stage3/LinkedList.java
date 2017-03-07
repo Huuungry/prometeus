@@ -1,6 +1,9 @@
 package stage3;
 
+import java.util.List;
+
 public class LinkedList {
+
 	private Node firstNode;
 	private Node lastNode;
 	private int size;
@@ -28,6 +31,10 @@ public class LinkedList {
 
 	public Integer get(int index) {
 		// PUT YOUR CODE HERE
+
+		if (index >= size) {
+			return null;
+		}
 		Node currentNode = firstNode;
 
 		for (int i = 0; i < index; i++) {
@@ -39,6 +46,10 @@ public class LinkedList {
 
 	public boolean delete(int index) {
 		// PUT YOUR CODE HERE
+		if (index<0)return false;
+		if (index > size - 1) {
+			return false;
+		}
 
 		if (index == 0) {
 			firstNode = firstNode.getNext();
@@ -57,16 +68,16 @@ public class LinkedList {
 			size--;
 			return true;
 		}
-		Node ptr = firstNode;
+		Node currentNode = firstNode;
 		index = index - 1;
 		for (int i = 1; i < size - 1; i++) {
 			if (i == index) {
-				Node tmp = ptr.getNext();
+				Node tmp = currentNode.getNext();
 				tmp = tmp.getNext();
-				ptr.setNext(tmp);
+				currentNode.setNext(tmp);
 				break;
 			}
-			ptr = ptr.getNext();
+			currentNode = currentNode.getNext();
 		}
 		size--;
 		return true;
