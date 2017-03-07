@@ -6,9 +6,9 @@ public class Sendbox {
 
 		Fibonacci a = new Fibonacci();
 		
-//		for(int j=1; j<4; j++){
-			a.getNumber(4);
-//		}
+		for(int j=-1; j<10; j++){
+			System.out.println(a.getNumber(j));
+		}
 	}
 
 }
