@@ -4,11 +4,22 @@ public class Sendbox {
 
 	public static void main(String[] args) {
 
-		Fibonacci a = new Fibonacci();
 		
-		for(int j=-1; j<10; j++){
-			System.out.println(a.getNumber(j));
-		}
-	}
+	Desk test = new Desk();
+	test.shuffle();
+	test.order();
+	
+//	for (int i=0; i<36; i++){
+//	System.out.print(test.desk[i].getRank().getName()+"\t");
+//	System.out.println(test.desk[i].getSuit().getName());
+//	}
 
+	while(test.hasNext()){
+	test.drawOne().cardValue();
+	}
+	System.out.println(test.hasNext());
+	System.out.println(test.drawOne());
+
+
+}
 }
