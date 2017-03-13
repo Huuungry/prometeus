@@ -57,13 +57,13 @@ public class LinkedList {
 			return true;
 		}
 		if (index == size - 1) {
-			Node s = firstNode;
-			Node t = firstNode;
-			while (s != lastNode) {
-				t = s;
-				s = s.getNext();
+			Node t1 = firstNode;
+			Node t2 = firstNode;
+			while (t1 != lastNode) {
+				t2 = t1;
+				t2 = t2.getNext();
 			}
-			lastNode = t;
+			lastNode = t2;
 			lastNode.setNext(null);
 			size--;
 			return true;
