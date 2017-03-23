@@ -20,17 +20,7 @@ public class Sort {
 		
 		//Change your code here
 		sort(array, comp);
-<<<<<<< HEAD
-		//Change your code here
-		
-		for (int i = 0; i < array.length; i++) {
-			System.out.print(array[i] + " ");
-		}
-	}
-	
-}      
-      
-=======
+
 		
 		for (int i=0;i<array.length/2;i++){
 			int temp = array[i];
@@ -45,4 +35,3 @@ public class Sort {
 	}
 	
 }      
->>>>>>> branch 'master' of https://github.com/Huuungry/prometeus.git
