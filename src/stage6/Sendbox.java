@@ -4,27 +4,28 @@ public class Sendbox {
 
 	public static void main(String[] args) {
 
-		String str1 = "abbyuiop";
+		String str1 = "aaabbbmmmcccc";
 		String result = new String();
-		result = Character.toString(str1.charAt(0));
 		int numberOfRepeated = 1;
-		for (int i = 0; i < str1.length() - 1; i++) {
-			
+		for (int i = 0; i < str1.length(); i++) {
 
-			if (str1.charAt(i) == str1.charAt(i + 1)) {
-				numberOfRepeated++;
+			if (i < str1.length()-1 && str1.charAt(i) != str1.charAt(i + 1)) {
 				// System.out.println(numberOfRepeated);
-			}
-
-			else {
-				System.out.println(numberOfRepeated);
-				if (numberOfRepeated != 1) {
+				result = result.concat(Character.toString(str1.charAt(i)));
+				if (numberOfRepeated != 1){
 					result = result.concat(Integer.toString(numberOfRepeated));
-					 numberOfRepeated = 1;
-				} else {
-					result = result.concat(Character.toString(str1.charAt(i+1)));
+					numberOfRepeated=1;
+				}
+			} else if (i == str1.length()-1) {
+				result = result.concat(Character.toString(str1.charAt(i)));
+				if (numberOfRepeated != 1){
+					result = result.concat(Integer.toString(numberOfRepeated));
 				}
 			}
+			else {
+				numberOfRepeated++;
+			}
+
 		}
 		System.out.println(result);
 	}
