@@ -7,6 +7,7 @@ public class Sendbox {
 		String str1 = "aaabbbbbbbbbbbbmmmcccc";
 		String result = new String();
 		int numberOfRepeated = 1;
+		
 		for (int i = 0; i < str1.length(); i++) {
 
 			if (i < str1.length()-1 && str1.charAt(i) != str1.charAt(i + 1)) {
