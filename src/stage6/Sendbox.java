@@ -4,22 +4,22 @@ public class Sendbox {
 
 	public static void main(String[] args) {
 
-		String str1 = "aaabbbbbbbbbbbbmmmcccc";
+		String inputString = args[0];
 		String result = new String();
 		int numberOfRepeated = 1;
 		
-		for (int i = 0; i < str1.length(); i++) {
+		for (int i = 0; i < inputString.length(); i++) {
 
-			if (i < str1.length()-1 && str1.charAt(i) != str1.charAt(i + 1)) {
+			if (i < inputString.length()-1 && inputString.charAt(i) != inputString.charAt(i + 1)) {
 				// System.out.println(numberOfRepeated);
-				result = result.concat(Character.toString(str1.charAt(i)));
+				result = result.concat(Character.toString(inputString.charAt(i)));
 				if (numberOfRepeated > 1 && numberOfRepeated < 10){
 					result = result.concat(Integer.toString(numberOfRepeated));
 					numberOfRepeated=1;
 				}
 			
-			} else if (i == str1.length()-1) {
-				result = result.concat(Character.toString(str1.charAt(i)));
+			} else if (i == inputString.length()-1) {
+				result = result.concat(Character.toString(inputString.charAt(i)));
 				if (numberOfRepeated != 1){
 					result = result.concat(Integer.toString(numberOfRepeated));
 				}
@@ -28,7 +28,7 @@ public class Sendbox {
 				numberOfRepeated++;
 			}
 			else{
-				result = result.concat(Character.toString(str1.charAt(i)));
+				result = result.concat(Character.toString(inputString.charAt(i)));
 				result = result.concat(Integer.toString(numberOfRepeated));
 				numberOfRepeated=1;
 			}
