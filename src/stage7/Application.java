@@ -1,16 +1,43 @@
 package stage7;
-
 import java.util.Deque;
 import java.util.LinkedList;
 
-public class Sendbox {
+public class Application {
 
 	public static double parse(String rpnString) {
+		String result = "";
+		boolean frac = false;
 
-		String[] arguments = rpnString.split(" ");
+		for (char ch : rpnString.toCharArray()) {
+			if (ch == '-') {
+				result = "-";
+				continue;
+			}
+			if (Character.isDigit(ch)) {
+				result = result + ch;
+				continue;
+			}
+			if (ch == '.' && !frac) {
+				result = result + ".";
+				frac = true;
+				continue;
+			}
+
+			throw new RPNParserException();
+		}
+
+		return Double.parseDouble(result);
+	}
+	
+	public static void main(String[] args) {
+
+		if (args == null || args.length == 0 || args[0] == null) {
+			throw new RPNParserException();
+		}
+
+		String[] arguments = args[0].split(" ");
 		LinkedList<Double> stack = new LinkedList<Double>();
-		Double result = null;
-		try{
+		try {
 			for (String str : arguments) {
 				switch (str) {
 				case "+":
@@ -41,52 +68,30 @@ public class Sendbox {
 					throw new ArithmeticException();
 
 				default:
-					String variable = "";
-					boolean frac = false;
-
-					for (char ch : str.toCharArray()) {
-
-						if (ch == '-') {
-							variable = "-";
-						} else if (Character.isDigit(ch)) {
-							variable = variable + ch;
-						} else if (ch == '.' && !frac) {
-							variable = variable + ".";
-							frac = true;
-						}
-						else throw new RPNParserException();
-					}
-
-					stack.push(Double.parseDouble(variable));
-
-
-
+					stack.push(parse(str));
 					break;
 				}
-
 			}
-		}catch(ArithmeticException e){
+		} catch (ArithmeticException e) {
 			throw new ArithmeticException();
 		}
 
-
-		catch(Exception ex){
+		catch (Exception ex) {
+			// System.out.println(ex);
 			throw new RPNParserException();
 		}
 
-		result = stack.pop();
-		System.err.println(result);
-		return result;
-	}
-
-	public static void main(String[] args) {
-
-		if (args == null || args.length == 0 || args[0] == null) {
+		if (stack.size() > 1)
 			throw new RPNParserException();
-		} else {
-			parse(args[0]);
-		}
 
+		Double result = stack.pop();
+		// if (result.isNaN() || result.isInfinite())
+		// throw new ArithmeticException();
+
+		int intresult = result.intValue();
+		System.out.println(intresult);
 	}
 
 }
+      
+      
